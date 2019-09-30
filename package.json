@@ -1,0 +1,28 @@
+{
+  "name": "@davidkent/codeceptjs-qtest-plugin",
+  "version": "0.0.1",
+  "description": "qTest plugin for CodeceptJS",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DuongPhanHoai/codeceptjs-qtest-plugin.git"
+  },
+  "keywords": [
+    "qtest",
+    "api"
+  ],
+  "author": "DuongPhanHoai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DuongPhanHoai/codeceptjs-qtest-plugin/issues"
+  },
+  "homepage": "https://github.com/DuongPhanHoai/codeceptjs-qtest-plugin#readme",
+  "dependencies": {
+    "@davidkent/qtest-js-api": "0.0.6"
+  },
+  "devDependencies": {},
+  "bin": {
+    "codeceptjs-qtest-plugin": "./index.js"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules
+bkToRemove
+/package-lock.json
+/.scannerwork
