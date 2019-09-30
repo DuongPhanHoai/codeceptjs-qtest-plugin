@@ -15,7 +15,7 @@ CONFIGURATION
  - URL: 'https://abcCompany.qtestnet.com'
  - username: user to login qTest
  - password: password to login qTest
- - parentId: projectID (Ex: URL of qTest is https://abcCompany.qtestnet.com/p/12345, then projectId is 12345)
+ - projectId: projectId (Ex: URL of qTest is https://abcCompany.qtestnet.com/p/12345, then projectId is 12345)
  - parentId: the id of test cycle or test suite
  - parentType: the type of parent 'test-cycle' or 'test-suite'
  - Passed: Passed Map value (go to qTestSite -> Config -> Automation Settings -> AUTOMATION INTEGRATION -> to see Mapping between Automationm status and qTest status)
