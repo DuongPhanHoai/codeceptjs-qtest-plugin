@@ -1,6 +1,6 @@
 {
-  "name": "@davidkent/codeceptjs-qtest-plugin",
-  "version": "0.0.2",
+  "name": "codeceptjs-qtest-plugin",
+  "version": "0.0.4",
   "description": "qTest plugin for CodeceptJS",
   "main": "index.js",
   "scripts": {},
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/DuongPhanHoai/codeceptjs-qtest-plugin#readme",
   "dependencies": {
-    "@davidkent/qtest-js-api": "0.0.6"
+    "qtest-js-api": "0.0.7"
   },
   "devDependencies": {},
   "bin": {

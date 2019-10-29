@@ -21,7 +21,7 @@ function getTestName (test) {
     return fullTitle;
   }
 }
-function getTestSteps (test, config) {
+function getTextSteps (test, config) {
   if (test) {
     let steps = [];
     
@@ -44,6 +44,19 @@ function getTestSteps (test, config) {
     }
     return steps;
   }
+}
+function getTextSteps (test) {
+  let textSteps = null;
+  if (test) {
+    for (let i = 0; i < test.steps.length; i++) {
+      const curStep = test.steps[i];
+      let description = curStep.name;
+      for (let iArg = 0 ; iArg < curStep.args.length; iArg ++)
+        description = `${description} ${curStep.args[iArg]}`;
+      textSteps = textSteps?`${textSteps}\n${i} ${curStep.status} ${description}`:`${i} ${curStep.status} ${description}`;
+    }
+  }
+  return textSteps;
 }
 
 const defaultConfig = {
@@ -74,7 +87,7 @@ module.exports = async function (config) {
     const foundTestRun = await testrunsAPI.findAndCreateIfNotFound(qTestTestId, testName, config.parentId, config.parentType);
     if (foundTestRun && foundTestRun.id) {
       // Create test log
-      testLog = await testrunsAPI.createAutoTestLog(foundTestRun.id, testName, config.Fßßailed, testName, getTestSteps(test, config));
+      testLog = await testrunsAPI.createAutoTestLog(foundTestRun.id, testName, config.Fßßailed, testName, getTextSteps(test, config));
     }
   });
   event.dispatcher.on(event.test.passed, async (test) => {
@@ -85,7 +98,7 @@ module.exports = async function (config) {
     const foundTestRun = await testrunsAPI.findAndCreateIfNotFound(qTestTestId, testName, config.parentId, config.parentType);
     if (foundTestRun && foundTestRun.id) {
       // Create test log
-      testLog = await testrunsAPI.createAutoTestLog(foundTestRun.id, testName, config.Passed, testName, getTestSteps(test, config));
+      testLog = await testrunsAPI.createAutoTestLog(foundTestRun.id, testName, config.Passed, testName, getTextSteps(test, config));
     }
   });
 }
