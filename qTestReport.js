@@ -1,7 +1,7 @@
 const event = require('codeceptjs').event;
 const {
   testruns
-} = require('@davidkent/qtest-js-api');
+} = require('qtest-js-api');
 
 function getqTestTCId (test) {
   if (test) {
